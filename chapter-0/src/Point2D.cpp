@@ -14,3 +14,8 @@ Point2D::Point2D(const Point2D &point2D) {
     this->_x = point2D._x;
     this->_y = point2D._y;
 }
+
+void Point2D::Translate(float x, float y) {
+    this->_x += x;
+    this->_y += y;
+}

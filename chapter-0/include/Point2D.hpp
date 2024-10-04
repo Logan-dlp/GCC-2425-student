@@ -7,6 +7,8 @@ public:
     Point2D(float x, float y); // Parameterized Constructor
     Point2D(const Point2D &point2D); // Constructor by copy
     ~Point2D() = default; // Destructor
+
+    void Translate(float x, float y);
 private:
     float _x;
     float _y;
