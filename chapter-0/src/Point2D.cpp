@@ -27,3 +27,8 @@ float Point2D::Abscissa() {
 float Point2D::Ordinate() {
     return this->_y;
 }
+
+void Point2D::Homothety(Point2D point2D_1, Point2D point2D_2, float ratio) {
+    this->_x = point2D_1.Abscissa() + ((point2D_2.Abscissa() - point2D_1.Abscissa()) * ratio);
+    this->_y = point2D_1.Ordinate() + ((point2D_2.Ordinate() - point2D_1.Ordinate()) * ratio);
+}

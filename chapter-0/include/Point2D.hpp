@@ -11,6 +11,8 @@ public:
     void Translate(float x, float y);
     float Abscissa();
     float Ordinate();
+
+    void Homothety(Point2D point2D_1, Point2D point2D_2, float ratio);
 private:
     float _x;
     float _y;

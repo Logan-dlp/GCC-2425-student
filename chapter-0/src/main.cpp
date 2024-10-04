@@ -8,14 +8,13 @@ void DisplayPoint2D(Point2D point2D) {
 
 int main()
 {
-    Point2D point2D = Point2D(2, 4);
+    Point2D p1 = Point2D(2, 2);
+    Point2D p2 = Point2D(4, 5);
 
-    DisplayPoint2D(point2D);
+    Point2D p3;
+    p3.Homothety(p1, p2, 1);
 
-    point2D.Translate(2, 4);
+    DisplayPoint2D(p3);
 
-    DisplayPoint2D(point2D);
-
-    std::cout << "Hello, World!" << std::endl;
     return 0;
 }
