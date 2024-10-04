@@ -9,6 +9,8 @@ public:
     ~Point2D() = default; // Destructor
 
     void Translate(float x, float y);
+    float Abscissa();
+    float Ordinate();
 private:
     float _x;
     float _y;

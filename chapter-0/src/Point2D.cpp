@@ -19,3 +19,11 @@ void Point2D::Translate(float x, float y) {
     this->_x += x;
     this->_y += y;
 }
+
+float Point2D::Abscissa() {
+    return this->_x;
+}
+
+float Point2D::Ordinate() {
+    return this->_y;
+}
