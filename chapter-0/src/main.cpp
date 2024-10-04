@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 
 #include "Point2D.hpp"
 
@@ -8,13 +9,17 @@ void DisplayPoint2D(Point2D point2D) {
 
 int main()
 {
-    Point2D p1 = Point2D(2, 2);
-    Point2D p2 = Point2D(4, 5);
+    Point2D p1(2, 2);
 
-    Point2D p3;
-    p3.Homothety(p1, p2, 1);
+    std::cout << p1.Rho() << std::endl;
+    std::cout << p1.Theta() * 180 / M_PI << std::endl;
 
-    DisplayPoint2D(p3);
+    p1.Rotate(M_PI/2);
+
+    std::cout << p1.Rho() << std::endl;
+    std::cout << p1.Theta() * 180 / M_PI << std::endl;
+
+    DisplayPoint2D(p1);
 
     return 0;
 }

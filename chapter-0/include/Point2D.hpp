@@ -9,10 +9,14 @@ public:
     ~Point2D() = default; // Destructor
 
     void Translate(float x, float y);
+    void Homothety(Point2D point2D_1, Point2D point2D_2, float ratio);
+    void Rotate(float rad);
+
     float Abscissa();
     float Ordinate();
 
-    void Homothety(Point2D point2D_1, Point2D point2D_2, float ratio);
+    float Rho();
+    float Theta();
 private:
     float _x;
     float _y;
