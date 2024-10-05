@@ -1,6 +1,8 @@
 #ifndef _CHAPTER_O_POINT_2D_HPP_
 #define _CHAPTER_O_POINT_2D_HPP_
 
+#include <string>
+
 class Point2D {
 public:
     Point2D(); // Constructor
@@ -17,9 +19,14 @@ public:
 
     float Rho();
     float Theta();
+
+    std::string ToString();
+    friend std::ostream& operator<<(std::ostream& os, const Point2D& point2D);
 private:
     float _x;
     float _y;
 };
+
+
 
 #endif // _CHAPTER_O_POINT_2D_HPP_

@@ -4,7 +4,7 @@
 #include "Point2D.hpp"
 
 void DisplayPoint2D(Point2D point2D) {
-    std::cout << "Abscissa: " << point2D.Abscissa() << " Ordinate: " << point2D.Ordinate() << std::endl;
+    std::cout << point2D << std::endl;
 }
 
 int main()
@@ -14,7 +14,9 @@ int main()
     std::cout << p1.Rho() << std::endl;
     std::cout << p1.Theta() * 180 / M_PI << std::endl;
 
-    p1.Rotate(M_PI/2);
+    DisplayPoint2D(p1);
+
+    p1.Rotate(M_PI/4);
 
     std::cout << p1.Rho() << std::endl;
     std::cout << p1.Theta() * 180 / M_PI << std::endl;

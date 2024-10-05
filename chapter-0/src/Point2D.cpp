@@ -1,5 +1,6 @@
 #include "Point2D.hpp"
 
+#include <iostream>
 #include <cmath>
 
 Point2D::Point2D() {
@@ -49,4 +50,13 @@ void Point2D::Rotate(float rad) {
 
     this->_x = - x * std::sin(rad) + y * std::cos(rad);
     this->_y = x * std::cos(rad) + y * std::sin(rad);
+}
+
+std::string Point2D::ToString() {
+    return "Abscissa: " + std::to_string(this->_x) + " Ordinate: " + std::to_string(this->_y);
+}
+
+std::ostream& operator<<(std::ostream& os, const Point2D& point2D) {
+    os << "Abscissa: " << point2D._x << " Ordinate: " << point2D._y;
+    return os;
 }
