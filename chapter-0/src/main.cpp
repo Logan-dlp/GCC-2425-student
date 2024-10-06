@@ -3,7 +3,7 @@
 
 #include "Point2D.hpp"
 
-void DisplayPoint2D(Point2D point2D) {
+void DisplayPoint2D(Point2D &point2D) {
     std::cout << point2D << std::endl;
 }
 
@@ -22,6 +22,11 @@ int main()
     std::cout << p1.Theta() * 180 / M_PI << std::endl;
 
     DisplayPoint2D(p1);
+
+    Point2D p2(4, 3);
+
+    std::cout << p2.allPointNumber << std::endl;
+    std::cout << p1.GetNumber() << std::endl;
 
     return 0;
 }
