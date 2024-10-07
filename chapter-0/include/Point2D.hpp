@@ -3,6 +3,12 @@
 
 #include <string>
 
+/*
+ * Réponse au question :
+ * 3.a  Les champs x et y sont mis en private pour bloquer l'accès à la modification.
+ * 3.b  Cela implique que personne n'y a accès à par lui-même.
+ */
+
 class Point2D {
 public:
     Point2D(); // Constructor
