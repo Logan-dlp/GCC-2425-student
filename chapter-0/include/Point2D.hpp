@@ -19,7 +19,7 @@ public:
     void Translate(float x, float y);
     int GetNumber();
 
-    std::string ToString();
+    virtual std::string ToString();
     friend std::ostream& operator<<(std::ostream& os, const Point2D& point2D);
 
     // Variable en static car il englobe tout les class Point2D, il va donc être le même pour toute les class.

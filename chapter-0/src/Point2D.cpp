@@ -10,7 +10,7 @@ Point2D::Point2D() {
     this->_y = 0;
 
     this->allPointNumber++;
-    this->pointNumber = allPointNumber;
+    this->_pointNumber = allPointNumber;
 }
 
 Point2D::Point2D(float x, float y) {
@@ -18,7 +18,7 @@ Point2D::Point2D(float x, float y) {
     this->_y = y;
 
     this->allPointNumber++;
-    this->pointNumber = allPointNumber;
+    this->_pointNumber = allPointNumber;
 }
 
 Point2D::Point2D(const Point2D &point2D) {
@@ -26,7 +26,7 @@ Point2D::Point2D(const Point2D &point2D) {
     this->_y = point2D._y;
 
     this->allPointNumber++;
-    this->pointNumber = allPointNumber;
+    this->_pointNumber = allPointNumber;
 }
 
 Point2D::~Point2D() {
@@ -39,7 +39,7 @@ void Point2D::Translate(float x, float y) {
 }
 
 int Point2D::GetNumber() {
-    return this->pointNumber;
+    return this->_pointNumber;
 }
 
 std::string Point2D::ToString() {
