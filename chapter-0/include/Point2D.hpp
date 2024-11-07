@@ -17,15 +17,6 @@ public:
     ~Point2D(); // Destructor
 
     void Translate(float x, float y);
-    void Homothety(Point2D point2D_1, Point2D point2D_2, float ratio);
-    void Rotate(float rad);
-
-    float Abscissa();
-    float Ordinate();
-
-    float Rho();
-    float Theta();
-
     int GetNumber();
 
     std::string ToString();
@@ -37,7 +28,7 @@ private:
     float _x;
     float _y;
 
-    int pointNumber;
+    int _pointNumber;
 };
 
 
