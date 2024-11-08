@@ -5,7 +5,10 @@
 
 class WeightedPoint : Point2D {
 public:
-    std::string Tostring() override;
+    WeightedPoint();
+    WeightedPoint(float x, float y, float weight);
+    WeightedPoint(const Point2D &point2D);
+    WeightedPoint(const WeightedPoint &weightedPoint);
 private:
     float _weight;
 };

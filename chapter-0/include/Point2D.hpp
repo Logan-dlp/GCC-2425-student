@@ -24,7 +24,7 @@ public:
 
     // Variable en static car il englobe tout les class Point2D, il va donc être le même pour toute les class.
     static int allPointNumber;
-private:
+protected:
     float _x;
     float _y;
 
