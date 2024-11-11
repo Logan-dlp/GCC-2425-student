@@ -26,7 +26,7 @@ float WeightedPoint::GetWeight() {
     return this->_weight;
 }
 
-std::string WeightedPoint::ToString() {
+std::string WeightedPoint::ToString() const {
     return Point2D::ToString() + " Weight: " + std::to_string(this->_weight);
 }
 

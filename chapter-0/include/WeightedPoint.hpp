@@ -3,7 +3,7 @@
 
 #include "Point2D.hpp"
 
-class WeightedPoint : Point2D {
+class WeightedPoint : public Point2D {
 public:
     WeightedPoint();
     WeightedPoint(float x, float y, float weight = 0);
@@ -14,7 +14,7 @@ public:
     void SetWeight(float weight);
     float GetWeight();
 
-    std::string ToString() override;
+    std::string ToString() const override;
     friend std::ostream& operator<<(std::ostream& os, const WeightedPoint& weightedPoint);
 
 private:

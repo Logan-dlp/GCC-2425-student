@@ -42,7 +42,7 @@ int Point2D::GetNumber() {
     return this->_pointNumber;
 }
 
-std::string Point2D::ToString() {
+std::string Point2D::ToString() const {
     return "Abscissa: " + std::to_string(this->_x) + " Ordinate: " + std::to_string(this->_y);
 }
 
