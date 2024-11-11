@@ -16,6 +16,10 @@ WeightedPoint::WeightedPoint(const WeightedPoint &weightedPoint) : Point2D(weigh
     this->_weight = weightedPoint._weight;
 }
 
+float WeightedPoint::DistanceFromOrigin() const {
+    return Point2D::DistanceFromOrigin();
+}
+
 void WeightedPoint::SetWeight(float weight) {
     this->_weight = weight;
 }

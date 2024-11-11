@@ -12,6 +12,8 @@ public:
     WeightedPoint(const WeightedPoint &weightedPoint);
     ~WeightedPoint() = default;
 
+    float DistanceFromOrigin() const override;
+
     void SetWeight(float weight);
     float GetWeight();
 

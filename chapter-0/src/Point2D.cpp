@@ -33,6 +33,10 @@ Point2D::~Point2D() {
     this->allPointNumber--;
 }
 
+float Point2D::DistanceFromOrigin() const {
+    return std::sqrt(std::pow((0 - this->_x), 2) + std::pow((0 - this->_y), 2));
+}
+
 void Point2D::Translate(float x, float y) {
     this->_x += x;
     this->_y += y;

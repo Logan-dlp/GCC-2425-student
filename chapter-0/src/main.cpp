@@ -33,5 +33,7 @@ int main()
 
     DisplayPoints(pointVector);
 
+    std::cout << wp1.DistanceFromOrigin() << std::endl;
+
     return 0;
 }

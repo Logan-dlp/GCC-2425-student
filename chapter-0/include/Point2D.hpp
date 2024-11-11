@@ -16,6 +16,8 @@ public:
     Point2D(const Point2D &point2D); // Constructor by copy
     ~Point2D(); // Destructor
 
+    virtual float DistanceFromOrigin() const = 0;
+
     void Translate(float x, float y);
     int GetNumber();
 

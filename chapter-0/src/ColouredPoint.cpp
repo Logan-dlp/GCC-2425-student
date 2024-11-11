@@ -16,6 +16,10 @@ ColouredPoint::ColouredPoint(const ColouredPoint &colouredPoint) : Point2D(colou
     this->_colour = colouredPoint._colour;
 }
 
+float ColouredPoint::DistanceFromOrigin() const {
+    return Point2D::DistanceFromOrigin();
+}
+
 void ColouredPoint::SetColour(float colour) {
     this->_colour = colour;
 }

@@ -12,6 +12,8 @@ public:
     ColouredPoint(const ColouredPoint &colouredPoint);
     ~ColouredPoint() = default;
 
+    float DistanceFromOrigin() const override;
+
     void SetColour(float colour);
     float GetColour();
 
