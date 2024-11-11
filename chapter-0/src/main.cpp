@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 
 #include "Point2D.hpp"
 #include "WeightedPoint.hpp"
@@ -14,19 +15,23 @@ void DisplayPoint(const Point2D& point2D){
     std::cout << point2D.ToString() << std::endl;
 }
 
+void DisplayPoints(const std::vector<Point2D*>& points) {
+    for (int i = 0; i < (int)points.size(); ++i) {
+        std::cout << points[i]->ToString() << std::endl;
+    }
+}
+
 int main()
 {
-    Point2D p1 = Point2D(1, 5);
     WeightedPoint wp1 = WeightedPoint(1, 3, 2);
     ColouredPoint cp1 = ColouredPoint(3, 4, 255);
 
-    Point2D* points[] = {&p1, &wp1, &cp1};
+    Point2D* points[] = {&wp1, &cp1 };
+    std::vector<Point2D*> pointVector = { &wp1, &cp1 };
 
     TranslateAll(points, std::size(points), 2, 3);
 
-    DisplayPoint(p1);
-    DisplayPoint(wp1);
-    DisplayPoint(cp1);
+    DisplayPoints(pointVector);
 
     return 0;
 }
