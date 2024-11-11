@@ -2,6 +2,7 @@
 #define CHAPTER_0_WEIGHTEDPOINT_HPP
 
 #include "Point2D.hpp"
+#include <ostream>
 
 class WeightedPoint : public Point2D {
 public:

@@ -1,7 +1,5 @@
 #include "WeightedPoint.hpp"
 
-#include "ostream"
-
 WeightedPoint::WeightedPoint() {
     this->_weight = 0;
 }
