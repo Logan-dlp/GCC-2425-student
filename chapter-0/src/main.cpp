@@ -1,32 +1,34 @@
 #include <iostream>
-#include <cmath>
+#include <vector>
 
 #include "Point2D.hpp"
+#include "WeightedPoint.hpp"
+#include "ColouredPoint.hpp"
 
-void DisplayPoint2D(Point2D &point2D) {
-    std::cout << point2D << std::endl;
+void TranslateAll(Point2D** points, int size, float dx, float dy) {
+    for (int i = 0; i < size; ++i) {
+        points[i]->Translate(dx, dy);
+    }
+}
+
+void DisplayPoint(const Point2D& point2D){
+    std::cout << point2D.ToString() << std::endl;
+}
+
+void DisplayPoints(const std::vector<Point2D*>& points) {
+    for (int i = 0; i < (int)points.size(); ++i) {
+        std::cout << points[i]->ToString() << std::endl;
+    }
 }
 
 int main()
 {
-    Point2D p1(2, 2);
+    ColouredPoint wp1 = ColouredPoint(2, 2, 255);
+    ColouredPoint wp2 = ColouredPoint(2, 2, 255);
 
-    std::cout << p1.Rho() << std::endl;
-    std::cout << p1.Theta() * 180 / M_PI << std::endl;
+    ColouredPoint wp = wp1 + wp2;
 
-    DisplayPoint2D(p1);
-
-    p1.Rotate(M_PI/4);
-
-    std::cout << p1.Rho() << std::endl;
-    std::cout << p1.Theta() * 180 / M_PI << std::endl;
-
-    DisplayPoint2D(p1);
-
-    Point2D p2(4, 3);
-
-    std::cout << p2.allPointNumber << std::endl;
-    std::cout << p1.GetNumber() << std::endl;
+    std::cout << wp << std::endl;
 
     return 0;
 }

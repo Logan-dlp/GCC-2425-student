@@ -1,6 +1,8 @@
 #ifndef _CHAPTER_O_POINT_2D_HPP_
 #define _CHAPTER_O_POINT_2D_HPP_
 
+#include <ostream>
+#include <cmath>
 #include <string>
 
 /*
@@ -16,28 +18,21 @@ public:
     Point2D(const Point2D &point2D); // Constructor by copy
     ~Point2D(); // Destructor
 
+    virtual float DistanceFromOrigin() const = 0;
+
     void Translate(float x, float y);
-    void Homothety(Point2D point2D_1, Point2D point2D_2, float ratio);
-    void Rotate(float rad);
-
-    float Abscissa();
-    float Ordinate();
-
-    float Rho();
-    float Theta();
-
     int GetNumber();
 
-    std::string ToString();
+    virtual std::string ToString() const = 0;
     friend std::ostream& operator<<(std::ostream& os, const Point2D& point2D);
 
     // Variable en static car il englobe tout les class Point2D, il va donc être le même pour toute les class.
     static int allPointNumber;
-private:
+protected:
     float _x;
     float _y;
 
-    int pointNumber;
+    int _pointNumber;
 };
 
 
