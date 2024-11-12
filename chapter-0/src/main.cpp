@@ -23,17 +23,12 @@ void DisplayPoints(const std::vector<Point2D*>& points) {
 
 int main()
 {
-    WeightedPoint wp1 = WeightedPoint(1, 3, 2);
-    ColouredPoint cp1 = ColouredPoint(3, 4, 255);
+    ColouredPoint wp1 = ColouredPoint(2, 2, 255);
+    ColouredPoint wp2 = ColouredPoint(2, 2, 255);
 
-    Point2D* points[] = {&wp1, &cp1 };
-    std::vector<Point2D*> pointVector = { &wp1, &cp1 };
+    ColouredPoint wp = wp1 + wp2;
 
-    TranslateAll(points, std::size(points), 2, 3);
-
-    DisplayPoints(pointVector);
-
-    std::cout << wp1.DistanceFromOrigin() << std::endl;
+    std::cout << wp << std::endl;
 
     return 0;
 }

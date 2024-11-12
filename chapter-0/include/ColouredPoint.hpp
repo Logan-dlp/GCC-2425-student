@@ -2,7 +2,6 @@
 #define CHAPTER_0_COLOUREDPOINT_HPP
 
 #include "Point2D.hpp"
-#include <ostream>
 
 class ColouredPoint : public Point2D {
 public:
@@ -19,6 +18,8 @@ public:
 
     std::string ToString() const override;
     friend std::ostream& operator<<(std::ostream& os, const ColouredPoint& colouredPoint);
+    friend bool operator==(const ColouredPoint& colouredPoint, const ColouredPoint& colouredPoint1);
+    friend ColouredPoint operator+(const ColouredPoint& colouredPoint, const ColouredPoint& colouredPoint1);
 private:
     float _colour;
 };

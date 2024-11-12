@@ -2,7 +2,6 @@
 #define CHAPTER_0_WEIGHTEDPOINT_HPP
 
 #include "Point2D.hpp"
-#include <ostream>
 
 class WeightedPoint : public Point2D {
 public:
@@ -19,6 +18,8 @@ public:
 
     std::string ToString() const override;
     friend std::ostream& operator<<(std::ostream& os, const WeightedPoint& weightedPoint);
+    friend bool operator==(const WeightedPoint& weightedPoint, const WeightedPoint& weightedPoint1);
+    friend WeightedPoint operator+(const WeightedPoint& weightedPoint, const WeightedPoint& weightedPoint1);
 
 private:
     float _weight;

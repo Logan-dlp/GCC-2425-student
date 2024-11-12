@@ -1,8 +1,5 @@
 #include "Point2D.hpp"
 
-#include <iostream>
-#include <cmath>
-
 int Point2D::allPointNumber = 0;
 
 Point2D::Point2D() {

@@ -36,3 +36,14 @@ std::ostream& operator<<(std::ostream& os, const ColouredPoint& colouredPoint) {
     os << "Abscissa: " << colouredPoint._x << " Ordinate: " << colouredPoint._y << " Colour: " << colouredPoint._colour;
     return os;
 }
+
+bool operator==(const ColouredPoint& colouredPoint, const ColouredPoint& colouredPoint1) {
+    return colouredPoint._x == colouredPoint1._x && colouredPoint._y == colouredPoint1._y && colouredPoint._colour == colouredPoint1._colour;
+}
+
+ColouredPoint operator+(const ColouredPoint& colouredPoint, const ColouredPoint& colouredPoint1) {
+    float x = colouredPoint._x + colouredPoint1._x;
+    float y = colouredPoint._y + colouredPoint1._y;
+    float colour = colouredPoint._colour + colouredPoint1._colour;
+    return ColouredPoint(x, y, colour);
+}

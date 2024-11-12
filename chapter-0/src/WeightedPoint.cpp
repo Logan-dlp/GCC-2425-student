@@ -36,3 +36,14 @@ std::ostream& operator<<(std::ostream& os, const WeightedPoint& weightedPoint) {
     os << "Abscissa: " << weightedPoint._x << " Ordinate: " << weightedPoint._y << " Weight: " << weightedPoint._weight;
     return os;
 }
+
+bool operator==(const WeightedPoint& weightedPoint, const WeightedPoint& weightedPoint1) {
+    return weightedPoint._x == weightedPoint1._x && weightedPoint._y == weightedPoint1._y && weightedPoint._weight == weightedPoint1._weight;
+}
+
+WeightedPoint operator+(const WeightedPoint& weightedPoint, const WeightedPoint& weightedPoint1) {
+    float x = weightedPoint._x + weightedPoint1._x;
+    float y = weightedPoint._y + weightedPoint1._y;
+    float weight = weightedPoint._weight + weightedPoint1._weight;
+    return WeightedPoint(x, y, weight);
+}
