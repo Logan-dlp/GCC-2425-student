@@ -1,5 +1,5 @@
-#ifndef DESIGN_PATTERN_COMPONENT_HPP
-#define DESIGN_PATTERN_COMPONENT_HPP
+#ifndef DESIGN_PATTERN_COMPONENT_COMPONENT_HPP
+#define DESIGN_PATTERN_COMPONENT_COMPONENT_HPP
 
 #include <memory>
 
@@ -11,4 +11,4 @@ public:
     virtual void Remove(const std::shared_ptr<Component>& component) {};
 };
 
-#endif //DESIGN_PATTERN_COMPONENT_HPP
+#endif //DESIGN_PATTERN_COMPONENT_COMPONENT_HPP

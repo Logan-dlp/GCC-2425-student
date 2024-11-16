@@ -1,5 +1,5 @@
-#ifndef DESIGN_PATTERN_ENTITY_HPP
-#define DESIGN_PATTERN_ENTITY_HPP
+#ifndef DESIGN_PATTERN_COMPONENT_ENTITY_HPP
+#define DESIGN_PATTERN_COMPONENT_ENTITY_HPP
 
 #include <iostream>
 #include "Component.hpp"
@@ -11,4 +11,4 @@ public:
     }
 };
 
-#endif //DESIGN_PATTERN_ENTITY_HPP
+#endif //DESIGN_PATTERN_COMPONENT_ENTITY_HPP

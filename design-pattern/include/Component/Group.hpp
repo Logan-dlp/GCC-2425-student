@@ -1,5 +1,5 @@
-#ifndef DESIGN_PATTERN_GROUP_HPP
-#define DESIGN_PATTERN_GROUP_HPP
+#ifndef DESIGN_PATTERN_COMPONENT_GROUP_HPP
+#define DESIGN_PATTERN_COMPONENT_GROUP_HPP
 
 #include <iostream>
 #include <vector>
@@ -33,4 +33,4 @@ private:
     std::vector<std::shared_ptr<Component>> children;
 };
 
-#endif //DESIGN_PATTERN_GROUP_HPP
+#endif //DESIGN_PATTERN_COMPONENT_GROUP_HPP
