@@ -1,20 +1,13 @@
-#include "../include/Component/Entity.hpp"
-#include "../include/Component/Group.hpp"
+#include "../include/Flyweight/Texture.hpp"
+#include "../include/Flyweight/Unit.hpp"
 
 int main()
 {
-    const auto entity1 = std::make_shared<Entity>();
-    const auto entity2 = std::make_shared<Entity>();
-    const auto group = std::make_shared<Group>();
+    Unit u1;
+    u1.DisplayTexture();
 
-    group->Add(entity1);
-    group->Add(entity2);
-
-    group->Update();
-
-    group->Remove(entity1);
-
-    group->Update();
+    Unit u2;
+    u2.DisplayTexture();
 
     return 0;
 }
