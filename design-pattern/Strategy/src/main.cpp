@@ -58,13 +58,13 @@ int main() {
     // GenericSorting(v1);
     // DisplayVector(v1);
 
-    DisplayVector(v2);
-    GenericSorting(v2);
-    DisplayVector(v2);
+    // DisplayVector(v2);
+    // GenericSorting(v2);
+    // DisplayVector(v2);
 
-    // DisplayVector(v3);
-    // GenericSorting(v3);
-    // DisplayVector(v3);
+    DisplayVector(v3);
+    GenericSorting(v3);
+    DisplayVector(v3);
 
     return 0;
 }
