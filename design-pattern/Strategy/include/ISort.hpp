@@ -5,7 +5,7 @@
 
 struct ISort {
     virtual ~ISort() = default;
-    virtual void Sort(const std::vector<int>& vector) = 0;
+    virtual void Sort(std::vector<int>& vector) = 0;
 };
 
 #endif // ISORT_HPP
