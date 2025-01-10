@@ -13,7 +13,7 @@
 constexpr int MIN_VECTOR_SIZE = 0;
 constexpr int MAX_VECTOR_SIZE = 255;
 
-void GenericSorting(const std::vector<int>& v) {
+void GenericSorting(std::vector<int>& v) {
     std::unique_ptr<ISort> sortingAlgoritm = std::make_unique<QuickSort>();
 
     if (std::size_t collectionSize = v.size(); collectionSize < 16) {
@@ -54,17 +54,17 @@ int main() {
     FillRandomlyVector(17, v2);
     FillRandomlyVector(65, v3);
 
-    DisplayVector(v1);
-    GenericSorting(v1);
-    DisplayVector(v1);
+    // DisplayVector(v1);
+    // GenericSorting(v1);
+    // DisplayVector(v1);
 
     DisplayVector(v2);
     GenericSorting(v2);
     DisplayVector(v2);
 
-    DisplayVector(v3);
-    GenericSorting(v3);
-    DisplayVector(v3);
+    // DisplayVector(v3);
+    // GenericSorting(v3);
+    // DisplayVector(v3);
 
     return 0;
 }

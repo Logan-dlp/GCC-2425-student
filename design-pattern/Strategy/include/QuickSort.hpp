@@ -5,7 +5,7 @@
 #include "ISort.hpp"
 
 struct QuickSort final : ISort {
-    void Sort(const std::vector<int>& v) override {
+    void Sort(std::vector<int>& v) override {
         std::cout << "QuickSort::Sort()\n";
     }
 };
