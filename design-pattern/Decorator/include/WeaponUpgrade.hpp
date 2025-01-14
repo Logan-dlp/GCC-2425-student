@@ -3,10 +3,18 @@
 
 #include "IWeapon.hpp"
 
-class WeaponUpgrade {
-        virtual void Decorator(IWeapon& component) = 0;
+class WeaponUpgrade : public IWeapon {
+    public:
+        WeaponUpgrade(IWeapon* weapon) {
+            this->m_weapon = weapon;
+        }
+
+        int GetDamage() override {
+            this->m_weapon->GetDamage();
+        }
+
     protected:
-        IWeapon* m_component;
+        IWeapon* m_weapon;
 };
 
 #endif // WEAPONUPGRADE_HPP

@@ -1,14 +1,16 @@
 #ifndef SWORD_HPP
 #define SWORD_HPP
 
-#include <iostream>
-
 #include "IWeapon.hpp"
 
 class Sword : IWeapon {
-    void Attack() override {
-        std::cout << "Sword Attack !" << std::endl;
+public: 
+    int GetDamage() override {
+        return m_damage;
     }
+
+private:
+    int m_damage = 5;
 };
 
 #endif // SWORD_HPP
