@@ -5,12 +5,14 @@
 
 class WeaponUpgrade : public IWeapon {
     public:
-        WeaponUpgrade(IWeapon* weapon) {
-            this->m_weapon = weapon;
+        WeaponUpgrade() = default;
+
+        ~WeaponUpgrade() {
+            delete m_weapon;
         }
 
         int GetDamage() override {
-            this->m_weapon->GetDamage();
+            return this->m_weapon->GetDamage();
         }
 
     protected:

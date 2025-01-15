@@ -3,7 +3,7 @@
 
 #include "IWeapon.hpp"
 
-class Sword : IWeapon {
+class Sword : public IWeapon {
 public: 
     int GetDamage() override {
         return m_damage;

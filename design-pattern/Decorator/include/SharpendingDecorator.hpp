@@ -3,14 +3,16 @@
 
 #include "WeaponUpgrade.hpp"
 
+#include <iostream>
+
 class SharpendingDecorator : public WeaponUpgrade {
 public:
     SharpendingDecorator(IWeapon* weapon) {
-        this->m_weapon = weapon;
+        WeaponUpgrade::m_weapon = weapon;
     }
 
     int GetDamage() override {
-        this->m_weapon->GetDamage() + 5;
+        return WeaponUpgrade::m_weapon->GetDamage() + 5;
     }
 };
 
