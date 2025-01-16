@@ -9,6 +9,7 @@ class GameInstance : public ISubject {
 public:
     ~GameInstance() {
         for (auto* observer : m_observerVector) {
+            observer = nullptr;
             delete observer;
         }
     }

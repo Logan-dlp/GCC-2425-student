@@ -14,6 +14,7 @@ public :
     }
 
     ~Scoreboard() {
+        subject = nullptr;
         delete subject;
     }
 
