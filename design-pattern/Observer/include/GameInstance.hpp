@@ -8,7 +8,7 @@
 class GameInstance : public ISubject {
 public:
     ~GameInstance() {
-        for (auto* observer : m_observerVector) {
+        for (auto* observer : this->m_observerVector) {
             observer = nullptr;
             delete observer;
         }

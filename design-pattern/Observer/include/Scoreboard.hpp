@@ -14,8 +14,8 @@ public :
     }
 
     ~Scoreboard() {
-        subject = nullptr;
-        delete subject;
+        this->subject = nullptr;
+        delete this->subject;
     }
 
     void Update() override {
