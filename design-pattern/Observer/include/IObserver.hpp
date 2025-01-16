@@ -3,6 +3,7 @@
 
 struct IObserver
 {
+    virtual ~IObserver() = default;
     virtual void Update() = 0;
 };
 

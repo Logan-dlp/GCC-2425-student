@@ -2,10 +2,17 @@
 #define GAMEINSTANCE_HPP
 
 #include <vector>
+#include <algorithm>
 #include "ISubject.hpp"
  
 class GameInstance : public ISubject {
 public:
+    ~GameInstance() {
+        for (auto* observer : m_observerVector) {
+            delete observer;
+        }
+    }
+
     int GetState() override {
         return this->m_state;
     }
@@ -17,6 +24,11 @@ public:
 
     void Attach(IObserver* observer) override {
         this->m_observerVector.push_back(observer);
+    }
+
+    void Dettach(IObserver* observer) override {
+        auto it = std::remove(this->m_observerVector.begin(), this->m_observerVector.end(), observer);
+        this->m_observerVector.erase(it, this->m_observerVector.end());
     }
 
     void NotifyAllObserver() override {
