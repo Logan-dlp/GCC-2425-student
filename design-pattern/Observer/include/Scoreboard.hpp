@@ -7,23 +7,23 @@
 #include "IObserver.hpp"
 
 class Scoreboard : public IObserver {
-public :
-    Scoreboard(ISubject* subject) {
-        this->subject = subject;
-        this->subject->Attach(this);
-    }
+    public:
+        Scoreboard() {
+            m_score = 100;
+        }
 
-    ~Scoreboard() {
-        this->subject = nullptr;
-        delete this->subject;
-    }
+        void Update(const MessageData& message) override {
+            if (message.type == MESSAGE_TYPE::SCORE) {
+                m_score = std::max(0, m_score + message.value);
+            }
+        }
 
-    void Update() override {
-        std::cout << "Scoreboard Updated {" << this->subject->GetState() << "} !" << std::endl;
-    }
+        void Render() const {
+            std::cout << "SCORE: " << m_score << std::endl;
+        }
 
-private :
-    ISubject* subject;
+    private:
+        int m_score;
 };
 
 #endif // SCOREBOARD_HPP
