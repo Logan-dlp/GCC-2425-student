@@ -3,17 +3,16 @@
 
 #include "WeaponUpgrade.hpp"
 
-#include <iostream>
+class SharpendingDecorator final : public WeaponUpgrade {
+    public:
+        explicit SharpendingDecorator(IWeapon* weapon) : WeaponUpgrade(weapon) {}
 
-class SharpendingDecorator : public WeaponUpgrade {
-public:
-    SharpendingDecorator(IWeapon* weapon) {
-        WeaponUpgrade::m_weapon = weapon;
-    }
+        [[nodiscard]] int GetDamage() const override {
+            return WeaponUpgrade::GetDamage() + SHARPENING_ADDITIONAL_DAMAGE;
+        }
 
-    int GetDamage() override {
-        return WeaponUpgrade::m_weapon->GetDamage() + 5;
-    }
+    private:
+        static constexpr int SHARPENING_ADDITIONAL_DAMAGE = 25;
 };
 
 #endif // SHARPENDING_DECORATOR_HPP

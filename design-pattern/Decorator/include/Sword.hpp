@@ -5,12 +5,12 @@
 
 class Sword : public IWeapon {
 public: 
-    int GetDamage() override {
-        return m_damage;
+    [[nodiscard]] int GetDamage() const override {
+        return DEFAULT_DAMAGE;
     }
 
-private:
-    int m_damage = 5;
+protected:
+    static constexpr int DEFAULT_DAMAGE = 10;
 };
 
 #endif // SWORD_HPP
