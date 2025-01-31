@@ -5,13 +5,14 @@
 
 class WeaponUpgrade : public IWeapon {
     public:
-        WeaponUpgrade() = default;
+        explicit WeaponUpgrade(IWeapon* weapon) : m_weapon(weapon) {};
 
         ~WeaponUpgrade() {
+            m_weapon = nullptr;
             delete m_weapon;
         }
 
-        int GetDamage() override {
+        [[nodiscard]] int GetDamage() const override {
             return this->m_weapon->GetDamage();
         }
 

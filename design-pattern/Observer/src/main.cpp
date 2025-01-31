@@ -1,23 +1,29 @@
 #include <iostream>
 
-#include "Scoreboard.hpp"
 #include "GameInstance.hpp"
+#include "HealthBar.hpp"
+#include "Scoreboard.hpp"
 
 int main() {
+    GameInstance* gameInstance = new GameInstance();
+    Scoreboard* scoreboard = new Scoreboard();
+    HealthBar* healthBar = new HealthBar();
 
-    ISubject* subject = new GameInstance();
+    gameInstance->Attach(scoreboard);
+    gameInstance->Attach(healthBar);
 
-    IObserver* observer = new Scoreboard(subject);
+    gameInstance->TakeDamage(10);
+    gameInstance->ScorePoint(10);
 
-    std::cout << "Change state at '12' :" << std::endl;
-    subject->SetState(12);
+    scoreboard->Render();
+    healthBar->Render();
 
-    std::cout << "Change state at '15' :" << std::endl;
-    subject->SetState(15);
+    gameInstance->Dettach(healthBar);
 
-    std::cout << "Dettach observer & change state at '3' :" << std::endl;
-    subject->Dettach(observer);
-    subject->SetState(3);
+    gameInstance->ScorePoint(10);
+
+
+    delete gameInstance;
 
     return 0;
 }

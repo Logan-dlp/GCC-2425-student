@@ -4,11 +4,16 @@
 #include "Sword.hpp"
 
 int main() {
-    IWeapon* a = new Sword();
-    IWeapon* b = new SharpendingDecorator(a);
+    IWeapon* sword = new Sword();
+    
+    std::cout << "Sword damages: " << sword->GetDamage() << std::endl;
 
-    std::cout << a->GetDamage() << std::endl;
-    std::cout << b->GetDamage() << std::endl;
+    IWeapon* upgradedSword = new SharpendingDecorator(sword);
+
+    std::cout << "Sword damages with sharpening: " << upgradedSword->GetDamage() << std::endl;
+
+    delete upgradedSword;
+    delete sword;
 
     return 0;
 }

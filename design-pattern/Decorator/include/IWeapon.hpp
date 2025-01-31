@@ -3,7 +3,7 @@
 
 struct IWeapon {
     virtual ~IWeapon() = default;
-    virtual int GetDamage() = 0;
+    [[nodiscard]] virtual int GetDamage() const = 0;
 };
 
 

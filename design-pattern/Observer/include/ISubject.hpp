@@ -6,11 +6,10 @@
 struct ISubject
 {
     virtual ~ISubject() = default;
-    virtual int GetState() = 0;
-    virtual void SetState(int state) = 0;
+
     virtual void Attach(IObserver* observer) = 0;
     virtual void Dettach(IObserver* observer) = 0;
-    virtual void NotifyAllObserver() = 0;
+    virtual void NotifyAllObserver(const MessageData& message) = 0;
 };
 
 
