@@ -12,57 +12,33 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 SERVER_IP = "127.0.0.1"
 SERVER_PORT = 18080
 
-class DataService:
-    """ Handle data and business logic """
-    def __init__(self):
-        self.data_store = []
-
-    def get_data(self):
-        """ Return data store """
-        return {"data": self.data_store}
-
-    def add_data(self, new_data):
-        """ Add new data to data store """
-        self.data_store.append(new_data)
-        return {"message": "Data stored", "data": new_data}
+local_data_storage = []
 
 class RequestHandler(BaseHTTPRequestHandler):
-
-    dataService = DataService()
-
     def do_GET(self):
-        """ Handle GET requests """
-        routes = {
-            "/": lambda: {"message": "Welcome to the API!"},
-            "/data": self.dataService.get_data,
-        }
-
-        response = routes.get(self.path, lambda: None)()
-
-        if response is not None:
-            self.send_json_response(200, response)
+        if self.path == '/':
+            self.send_json_response(200, {"message": "Welcome to my API!"})
+        elif self.path == '/data':
+            self.send_json_response(200, {"data": local_data_storage})
         else:
             self.send_json_response(404, {"error": "Not found"})
-
+    
     def do_POST(self):
-        """ Handle POST requests """
-
-        if self.path == "/data":
+        if self.path == '/data':
             content_length = int(self.headers.get("Content-Length", 0))
             post_data = self.rfile.read(content_length)
 
             try:
                 json_data = json.loads(post_data)
-                response = self.dataService.add_data(json_data)
-                self.send_json_response(201, response)
+                local_data_storage.append(json_data)
+                self.send_json_response(201, {"message": "Data stored", "data": json_data})
             except json.JSONDecodeError:
-                self.send_json_response(400, {"error": "Bad Request: Invalid JSON format"})
+                self.send_json_response(400, {"error": "Invalid JSON format"})
         else:
             self.send_json_response(404, {"error": "Not found"})
 
     def send_json_response(self, status_code, data):
-        """Send a JSON response to the client."""
-
+        """ Send a JSON response to the client"""
         self.send_response(status_code)
         self.send_header("Content-Type", "application/json")
         self.end_headers()
